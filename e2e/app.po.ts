@@ -8,8 +8,4 @@ export class AppPage {
   getParagraphText() {
     return element(by.css('app-root p')).getText();
   }
-
-  async logIn() {
-    return await element(by.buttonText('Log In')).click();
-  }
 }

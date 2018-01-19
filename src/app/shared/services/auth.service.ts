@@ -64,4 +64,12 @@ export class AuthService {
     this.user = userString ? JSON.parse(userString) : undefined;
   }
 
+  public isAdmin(): boolean {
+    if(this.user) {
+      return this.user.email == "admin@example.com";
+    } else {
+      return false;
+    }
+  }
+
 }

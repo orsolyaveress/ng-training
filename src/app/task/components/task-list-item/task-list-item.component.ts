@@ -1,6 +1,4 @@
-import {
-  Component, OnInit, OnDestroy, Input, Output, EventEmitter, ElementRef
-} from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, Output, EventEmitter, ElementRef } from '@angular/core';
 
 import { Task } from '../../models/task';
 import { TaskService } from '../../services/task.service';
@@ -23,10 +21,7 @@ export class TaskListItemComponent implements OnInit, OnDestroy {
 
   private  _timekeeper: number;
 
-  public constructor(
-    private _taskService: TaskService,
-    private _elementRef: ElementRef
-  ) {
+  public constructor(private _taskService: TaskService, private _elementRef: ElementRef) {
     //
   }
 
@@ -36,11 +31,11 @@ export class TaskListItemComponent implements OnInit, OnDestroy {
       this.now = this._getGmtTime();
     }, 1000);
     jQuery(".colorpicker", this._elementRef.nativeElement).spectrum({
-        color: this.task.color,
-        change: color => {
-          this.task.color = color.toHexString();
-          this.updateTask(this.task);
-        }
+    color: this.task.color,
+    change: color => {
+      this.task.color = color.toHexString();
+      this.updateTask(this.task); 
+    }
     });
   }
 

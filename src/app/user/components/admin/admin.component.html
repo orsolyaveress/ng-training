@@ -1,0 +1,13 @@
+<h3>
+  User management
+</h3>
+<ul>
+  <li *ngFor="let user of users">
+    <label> {{user.name}}</label>
+    <button class="btn btn-xs btn-default" [routerLink]="['/user/update/', user.id]" >Edit</button>
+    <button class="btn btn-xs btn-danger" (click)="deleteUser(user)">Delete</button>
+
+</ul>
+<button class="btn btn-xs btn-default" [routerLink]="['/user/registration']">Create</button>
+
+
